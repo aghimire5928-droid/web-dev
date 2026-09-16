@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>testing</title>
+    <style>
+      .first-class {
+        position: relative;
+        height: 200px;
+        width: 300px;
+      }
+
+      .first-class svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+
+      .first-class::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first-class">
+      <img src="./images/image1.jpg" alt="" height="200" width="300" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="white"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </div>
+  </body>
+</html>
