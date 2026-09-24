@@ -1,81 +1,140 @@
-console.log("hello");
-const x = "kastuv";
-
-// sum
+console.log("External script loaded successfully!");
+const x = "Arjun";
 console.log(x);
+
 const a = 5;
-const b = 6;
-const totalSum = a + b;
-console.log("sum:", totalSum);
+const b = 10;
+const sum = a + b;
+console.log("sum:", sum);
 
-// product
-console.log(x);
-const c = 2;
-const d = 4;
-const totalProduct = c * d;
-console.log("product:", totalProduct);
+const multiply = a * b;
+console.log("Product:", multiply);
 
-// even or odd
-const evenOddX = 7;
-const evenOddY = 8;
-const evenOddZ = 9;
+const remainder = a % b;
+console.log("Remainder:", remainder);
 
-function checkEvenOdd(num) {
-  if (num % 2 === 0) {
-    console.log(num + " is even");
-  } else {
-    console.log(num + " is odd");
-  }
+// if p=7, q=8, r=9. Find if they are even or odd
+const p = 7;
+const q = 8;
+const r = 9;
+
+if (p % 2 == 0) {
+    console.log(p + " is an even number");
+} else {
+    console.log(p + " is an odd number");
 }
 
-checkEvenOdd(evenOddX);
-checkEvenOdd(evenOddY);
-checkEvenOdd(evenOddZ);
+if (q % 2 == 0) {
+    console.log(q + " is an even number");
+} else {
+    console.log(q + " is an odd number");
+}
 
-// number
+if (r % 2 == 0) {
+    console.log(r + " is an even number");
+} else {
+    console.log(r + " is an odd number");
+}
+
 let num = 5;
 if (num === 5) {
-  console.log("number");
+    console.log("number");
 } else if (num == 5) {
-  console.log("string");
+    console.log("string");
 }
 
-// function
-function displayName() {
-  console.log("akrantee");
+function displayname(name) {
+    console.log("My name is", name);
 }
+displayname("Shivnarayan");
 
-displayName();
-
-// create a function for sum, product, difference
-function sum(x, y) {
-  console.log("the sum is :", x + y);
+function sum2(a, b) {
+    console.log("The sum is:", a + b);
 }
-sum(2, 10);
+sum2(4, 10);
 
-function product(x, y) {
-  console.log("the product is :", x * y);
+function product(a, b) {
+    console.log("The product is:", a * b);
 }
-product(2, 10);
+product(4, 10);
 
-function difference(x, y) {
-  console.log("the difference is :", x - y);
+function remainderFn(a, b) {
+    console.log("The remainder is:", a % b);
 }
-difference(2, 10);
+remainderFn(4, 10);
 
-
-//let u = 5;
-let u = prompt("enter any number to check odd or even");
-let result = checkEvenOdd(u);
-if (result == 0) {
-   // console.log(u + " is an even number");
-   alert(u + "is an even number");
-} else {
-  //  console.log(u + " is an odd number");
-  alert(u + "is an even number");
-}
-
-//create a function to check if a number is even or odd
-function checkEvenOdd(num){
+function checkEvenOdd(num) {
     return num % 2;
 }
+
+let x2 = 5;
+let result = checkEvenOdd(x2);
+if (result == 0) {
+    console.log(x2 + " is an even number");
+} else {
+    console.log(x2 + " is an odd number");
+}
+
+// Check even/odd using prompt/alert (only works in browser, not Node.js)
+let userInput = prompt("Enter any number to check odd or even");
+let result2 = checkEvenOdd(userInput);
+if (result2 == 0) {
+    alert(userInput + " is an even number");
+} else {
+    alert(userInput + " is an odd number");
+}
+
+// for loop with break
+let i;
+for (i = 0; i < 10; i++) {
+    if (i == 3) break;
+    console.log(`The value of i is ${i}`);
+}
+console.log(`The value of i is ${i}`);
+
+// for loop with continue
+for (i = 1; i <= 10; i++) {
+    if (i == 3) continue;
+    console.log(`2 × ${i} = ${2 * i}`);
+}
+
+// while loop - multiplication table of 2
+let j = 1;
+while (j <= 10) {
+    console.log(`2 × ${j} = ${2 * j}`);
+    j++;
+}
+
+// while loop - multiplication table of user input number
+// NOTE: type an actual number (e.g. 5) in the prompt box, or this will show 0 × n = 0
+let tableNum = Number(prompt("Enter a number:"));
+let k = 1;
+while (k <= 10) {
+    console.log(`${tableNum} × ${k} = ${tableNum * k}`);
+    k++;
+}
+
+// Arrays - basic access
+let fruitsBasic = ["Apple", "Mango", "Banana"];
+console.log(fruitsBasic[0]);
+console.log(fruitsBasic[1]);
+console.log(fruitsBasic[2]);
+
+// Arrays - push and pop (fixed logic)
+let fruits = ["Apple", "Mango", "Banana", "Orange"];
+fruits.push("Guava");
+
+// Step 1: print all fruits first
+console.log("All fruits:");
+for (let m = 0; m < fruits.length; m++) {
+    console.log(fruits[m]);
+}
+console.log("Total fruits:", fruits.length);
+
+// Step 2: now remove them one by one
+console.log("Removing fruits one by one:");
+while (fruits.length > 0) {
+    console.log("Removed:", fruits.pop());
+}
+
+console.log("Fruits array after popping all:", fruits);
